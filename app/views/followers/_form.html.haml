@@ -1,0 +1,49 @@
+= form_for @follower do |f|
+  - if @follower.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@follower.errors.count, "error")} prohibited this follower from being saved:"
+      %ul
+        - @follower.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :datetime
+    = f.datetime_select :datetime
+  .field
+    = f.label :tomaya
+    = f.number_field :tomaya
+  .field
+    = f.label :niigata
+    = f.number_field :niigata
+  .field
+    = f.label :shinano
+    = f.number_field :shinano
+  .field
+    = f.label :ishikawa
+    = f.number_field :ishikawa
+  .field
+    = f.label :shiga
+    = f.number_field :shiga
+  .field
+    = f.label :ibaraki
+    = f.number_field :ibaraki
+  .field
+    = f.label :fukushima
+    = f.number_field :fukushima
+  .field
+    = f.label :saitama
+    = f.number_field :saitama
+  .field
+    = f.label :tochigi
+    = f.number_field :tochigi
+  .field
+    = f.label :gunma
+    = f.number_field :gunma
+  .field
+    = f.label :kanagawa
+    = f.number_field :kanagawa
+  .field
+    = f.label :fukui
+    = f.number_field :fukui
+  .actions
+    = f.submit 'Save'

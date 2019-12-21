@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.table__table-cell {
+    padding-right: 10px;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 768px以上(iPad以上)の場合 */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 720px;
+    }
+}
