@@ -1,66 +1,24 @@
 %h1
   BCL Follower
 %p
-  ※取得に失敗する場合は時間を空けてから再度アクセスしてください。
+  毎日13時に自動集計しています。
 %table
+  %thead.table__table-header
+    %tr
+      %th.table__table-cell
+        チーム
+      %th.table__table-cell
+        フォロワー数
+      %th.table__table-cell
+        前日比
   %tbody
-    %tr
-      %td.table__table-cell
-        栃木GB
-      %td.table__table-cell
-        = @count_tochigi
-    %tr
-      %td.table__table-cell
-        新潟ABC
-      %td.table__table-cell
-        = @count_niigata
-    %tr
-      %td.table__table-cell
-        富山GRNTB
-      %td.table__table-cell
-        = @count_toyama
-    %tr
-      %td.table__table-cell
-        石川MS
-      %td.table__table-cell
-        = @count_ishikawa
-    %tr
-      %td.table__table-cell
-        福島RH
-      %td.table__table-cell
-        = @count_fukushima
-    %tr
-      %td.table__table-cell
-        群馬DP
-      %td.table__table-cell
-        = @count_gunma
-    %tr
-      %td.table__table-cell
-        神奈川FD
-      %td.table__table-cell
-        = @count_kanagawa
-    %tr
-      %td.table__table-cell
-        信濃GS
-      %td.table__table-cell
-        = @count_shinano
-    %tr
-      %td.table__table-cell
-        茨城AP
-      %td.table__table-cell
-        = @count_ibaraki
-    %tr
-      %td.table__table-cell
-        埼玉武蔵HB
-      %td.table__table-cell
-        = @count_saitama
-    %tr
-      %td.table__table-cell
-        オセアン滋賀UBC
-      %td.table__table-cell
-        = @count_shiga
-    %tr
-      %td.table__table-cell
-        福井WR
-      %td.table__table-cell
-        = @count_fukui
+    - @followers_today.each do |follower|
+      %tr
+        %td.table__table-cell
+          = follower.team
+        %td.table__table-cell
+          = follower.followers_count
+        %td.table__table-cell
+          = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team)&.followers_count.to_i)
+%p
+  = "最終更新日： #{@followers_today.first.created_at.strftime("%F")}"

@@ -15,7 +15,11 @@
  */
 
 .table__table-cell {
-    padding-right: 10px;
+    padding-right: 15px;
+}
+
+.table__table-header {
+    text-align: left;
 }
 
 body {
