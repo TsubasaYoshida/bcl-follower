@@ -11,7 +11,7 @@ class FollowersController < ApplicationController
     end
     @count_toyama = client.user("T_birds").followers_count
     @count_niigata = client.user("Albi_BC_PR").followers_count
-    @count_sinano = client.user("GrazieClub").followers_count
+    @count_shinano = client.user("GrazieClub").followers_count
     @count_ishikawa = client.user("I_Million_Stars").followers_count
     @count_shiga = client.user("shigaunitedbc").followers_count
     @count_ibaraki = client.user("ibaraki_planets").followers_count
@@ -34,28 +34,6 @@ class FollowersController < ApplicationController
   end
 
   def create
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key = Rails.application.credentials.twitter[:api_key]
-      config.consumer_secret = Rails.application.credentials.twitter[:api_secret_key]
-      config.access_token = Rails.application.credentials.twitter[:access_token]
-      config.access_token_secret = Rails.application.credentials.twitter[:access_token_secret]
-    end
-    follower = Follower.new(
-        datetime: Date.today.to_time,
-        toyama: client.user("T_birds").followers_count,
-        niigata: client.user("Albi_BC_PR").followers_count,
-        sinano: client.user("GrazieClub").followers_count,
-        ishikawa: client.user("I_Million_Stars").followers_count,
-        shiga: client.user("shigaunitedbc").followers_count,
-        ibaraki: client.user("ibaraki_planets").followers_count,
-        fukushima: client.user("F_REDHOPES").followers_count,
-        saitama: client.user("musashi_bears").followers_count,
-        tochigi: client.user("tochigi_gb").followers_count,
-        gunma: client.user("kyumaraima").followers_count,
-        kanagawa: client.user("k_futuredreams").followers_count,
-        fukui: client.user("Fukui_Raptors").followers_count
-    )
-    follower.save
   end
 
   def update
@@ -86,10 +64,8 @@ class FollowersController < ApplicationController
 
   def follower_params
     params.require(:follower).permit(
-        :datetime,
-        :tomaya, :niigata, :shinano, :ishikawa,
-        :shiga, :ibaraki, :fukushima, :saitama,
-        :tochigi, :gunma, :kanagawa, :fukui
+        :team,
+        :followers_count
     )
   end
 end

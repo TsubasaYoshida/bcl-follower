@@ -10,24 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_134818) do
+ActiveRecord::Schema.define(version: 2019_12_22_022950) do
 
   create_table "followers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.datetime "datetime"
-    t.integer "tomaya"
-    t.integer "niigata"
-    t.integer "shinano"
-    t.integer "ishikawa"
-    t.integer "shiga"
-    t.integer "ibaraki"
-    t.integer "fukushima"
-    t.integer "saitama"
-    t.integer "tochigi"
-    t.integer "gunma"
-    t.integer "kanagawa"
-    t.integer "fukui"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "team", null: false
+    t.integer "followers_count", null: false
   end
 
 end
