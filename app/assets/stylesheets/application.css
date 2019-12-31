@@ -91,6 +91,23 @@ body {
     padding: 5px 15px;
 }
 
+.count-table__cell--header {
+    border-right: solid 2px #FFF;
+    padding: 5px 15px;
+    background-color: #666;
+    color: #FFF;
+    font-size: 11px;
+    width: 70px;
+}
+
+.count-table__cell--header:first-child {
+    border-left: solid 2px #666;
+}
+
+.count-table__cell--header:last-child {
+    border-right: solid 2px #666;
+}
+
 .last-updated {
     margin-top: 7px;
     margin-left: 2px;

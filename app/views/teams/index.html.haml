@@ -12,11 +12,11 @@ class: 'twitter-share-button',
 %table.count-table
   %thead
     %tr
-      %th.count-table__cell
+      %th.count-table__cell--header
         チーム
-      %th.count-table__cell
+      %th.count-table__cell--header
         フォロワー数
-      %th.count-table__cell
+      %th.count-table__cell--header
         前日比
   %tbody
     - @followers_today.each do |follower|
