@@ -1,0 +1,24 @@
+%h1.team-name
+  = @team.name
+
+= link_to "https://twitter.com/#{@team.screen_name}", class: 'twitter-button', target: '_blank' do
+  = image_tag 'Twitter_Social_Icon_Rounded_Square_Color.svg', size: '30x30'
+
+.follower-count
+  %span.follower-count__label
+    Followers:
+  %span.follower-count__value
+    = "#{@team.followers.last.followers_count.to_s(:delimited)}"
+
+.follower-count-remarks
+  = "last updated : #{@team.followers.last.created_at.strftime("%F %R")}"
+
+%table.count-table
+  %tbody
+    - @followers.each do |follower|
+      %tr
+        %td.count-table__cell
+          = follower.created_at.strftime("%F %R")
+        %td.count-table__cell
+          = follower.followers_count
+-#= paginate @followers

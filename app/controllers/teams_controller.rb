@@ -12,6 +12,8 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    # @followers = @team.followers.page(params[:page]).per(3).order(created_at: :desc)
+    @followers = @team.followers.order(created_at: :desc)
   end
 
 end
