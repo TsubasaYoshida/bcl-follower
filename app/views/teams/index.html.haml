@@ -1,6 +1,4 @@
-%h1
-  BCL Follower
-%p
+%p.message
   毎日15時に自動集計しています。
 
 -#tweet-button-start
@@ -11,23 +9,24 @@ class: 'twitter-share-button',
 %script{async: '', src: "https://platform.twitter.com/widgets.js", charset: "utf-8"}
 -#tweet-button-end
 
-%table
-  %thead.table__table-header
+%table.count-table
+  %thead
     %tr
-      %th.table__table-cell
+      %th.count-table__cell
         チーム
-      %th.table__table-cell
+      %th.count-table__cell
         フォロワー数
-      %th.table__table-cell
+      %th.count-table__cell
         前日比
   %tbody
     - @followers_today.each do |follower|
       %tr
-        %td.table__table-cell
+        %td.count-table__cell
           = link_to follower.team.short_name, follower.team
-        %td.table__table-cell
+        %td.count-table__cell
           = follower.followers_count
-        %td.table__table-cell
+        %td.count-table__cell
           = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team)&.followers_count.to_i)
-%p
-  = "最終更新日： #{@followers_today.first.created_at.strftime("%F")}"
+
+.last-updated
+  = "last updated : #{@followers_today.first.created_at.strftime("%F %R")}"
