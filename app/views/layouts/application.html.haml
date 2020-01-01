@@ -25,9 +25,11 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    %h1.app-title
-      = link_to 'BCL Follower', '/'
-    .main
+    %header
+      %h1.app-title
+        = link_to 'BCL Follower', '/'
+    %main
       = yield
-    .copyright
-      &#169; 2019 BCL Follower
+    %footer
+      .copyright
+        &#169; 2019 BCL Follower
