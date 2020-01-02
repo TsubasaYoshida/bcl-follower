@@ -13,20 +13,24 @@ class: 'twitter-share-button',
   %thead
     %tr
       %th.count-table__cell--header
-        チーム
+        Team
       %th.count-table__cell--header
-        フォロワー数
+        Followers
       %th.count-table__cell--header
-        前日比
+        up / down
   %tbody
     - @followers_today.each do |follower|
       %tr
         %td.count-table__cell
-          = link_to follower.team.short_name, follower.team
+          = link_to follower.team, class: 'count-table__cell--link' do
+            %span.count-table__cell--text
+              = follower.team.short_name
         %td.count-table__cell
-          = follower.followers_count
+          %span.count-table__cell--text
+            = follower.followers_count
         %td.count-table__cell
-          = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team)&.followers_count.to_i)
+          %span.count-table__cell--text
+            = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team)&.followers_count.to_i)
 
 .last-updated
   = "last updated : #{@followers_today.first.created_at.strftime("%F %R")}"

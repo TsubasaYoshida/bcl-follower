@@ -17,8 +17,8 @@
   %tbody
     - @followers.each do |follower|
       %tr
-        %td.count-table__cell
+        %td.count-table__cell--per-day
           = follower.created_at.strftime("%F %R")
-        %td.count-table__cell
+        %td.count-table__cell--per-day
           = follower.followers_count
 -#= paginate @followers
