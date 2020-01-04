@@ -26,6 +26,10 @@ a {
     padding-left: 15px;
 }
 
+.app-title--link:hover {
+    opacity: .5;
+}
+
 main {
     padding: 0 15px;
 }
@@ -60,6 +64,10 @@ footer {
 .twitter-button {
     position: relative;
     z-index: 9999;
+}
+
+.twitter-button:hover {
+    opacity: .7;
 }
 
 .follower-count {
@@ -122,6 +130,15 @@ footer {
     color: #FFF;
     font-size: 12px;
     width: 70px;
+}
+
+.count-table__cell--hover:hover {
+    color: #FFF;
+    background-color: #666;
+}
+
+.count-table__cell--hover:hover a {
+    color: #FFF;
 }
 
 .count-table__cell--header:first-child {

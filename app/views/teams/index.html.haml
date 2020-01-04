@@ -21,7 +21,7 @@ class: 'twitter-share-button',
   %tbody
     - @followers_today.each do |follower|
       %tr
-        %td.count-table__cell
+        %td.count-table__cell.count-table__cell--hover
           = link_to follower.team, class: 'count-table__cell--link' do
             %span.count-table__cell--text
               = follower.team.short_name
