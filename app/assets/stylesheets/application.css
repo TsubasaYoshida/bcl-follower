@@ -102,7 +102,9 @@ footer {
 }
 
 .count-table__cell {
-    border: solid 2px #666;
+    border-right: solid 2px #666;
+    border-bottom: solid 2px #666;
+    border-left: solid 2px #666;
     line-height: 28px;
 }
 
