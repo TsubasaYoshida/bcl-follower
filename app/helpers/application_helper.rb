@@ -8,4 +8,8 @@ module ApplicationHelper
       value
     end
   end
+
+  def get_this_year
+    Time.now.year
+  end
 end
