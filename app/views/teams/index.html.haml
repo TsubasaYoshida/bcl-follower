@@ -33,4 +33,4 @@ class: 'twitter-share-button',
             = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team)&.followers_count.to_i)
 
 .last-updated
-  = "last updated : #{@followers_today.first.created_at.strftime("%F %R")}"
+  last updated : #{@followers_today.first.created_at.strftime("%F %R")}

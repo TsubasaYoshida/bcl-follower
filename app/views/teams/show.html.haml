@@ -8,10 +8,10 @@
   %span.follower-count__label
     Followers:
   %span.follower-count__value
-    = "#{@team.followers.last.followers_count.to_s(:delimited)}"
+    = @team.followers.last.followers_count.to_s(:delimited)
 
 .follower-count-remarks
-  = "last updated : #{@team.followers.last.created_at.strftime("%F %R")}"
+  last updated : #{@team.followers.last.created_at.strftime("%F %R")}
 
 %table.count-table
   %tbody
