@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// reset
+p {
+  margin: 0;
+}
+
+body {
+  font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  margin: 0 auto 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  // 768px以上(iPad以上)の場合
+  @media screen and (min-width: 768px) {
+    max-width: 720px;
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+main {
+  padding: 0 15px;
+  margin: 0 0 40px;
+}
+
+.header {
+  border-bottom: solid 2px #666;
+  padding: 0 0 0 15px;
+  &__app-title {
+    margin: 10px 0 0;
+    a:hover {
+      opacity: .5;
+    }
+  }
+}
+
+.message {
+  margin: 10px 0 0;
+}
+
+.share {
+  margin: 10px 0 0;
+}
+
+.team-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.twitter-button {
+  position: relative;
+  z-index: 9999;
+}
+
+.twitter-button:hover {
+  opacity: .7;
+}
+
+.follower-count {
+  vertical-align: top;
+  position: relative;
+  top: -1.5em;
+}
+
+.follower-count__label {
+  margin-right: 5px;
+}
+
+.follower-count__value {
+  font-weight: bold;
+  font-size: 40px;
+  color: #B00100;
+}
+
+.follower-count-remarks {
+  color: #666;
+  font-size: 10px;
+  vertical-align: top;
+  position: relative;
+  top: -3.3em;
+  margin-left: 2px;
+  margin-bottom: -30px;
+}
+
+.count-table {
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+.count-table__cell {
+  border-right: solid 2px #666;
+  border-bottom: solid 2px #666;
+  border-left: solid 2px #666;
+  line-height: 28px;
+}
+
+.count-table__cell--per-day {
+  border: solid 2px #666;
+  padding: 2px 15px;
+}
+
+.count-table__cell--link {
+  text-decoration-line: underline;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.count-table__cell--text {
+  position: relative;
+  left: 7px;
+}
+
+.count-table__cell--header {
+  border-right: solid 2px #FFF;
+  padding: 5px 15px;
+  background-color: #666;
+  color: #FFF;
+  font-size: 12px;
+  width: 70px;
+}
+
+.count-table__cell--hover:hover {
+  color: #FFF;
+  background-color: #666;
+}
+
+.count-table__cell--hover:hover a {
+  color: #FFF;
+}
+
+.count-table__cell--header:first-child {
+  border-left: solid 2px #666;
+}
+
+.count-table__cell--header:last-child {
+  border-right: solid 2px #666;
+}
+
+.last-updated {
+  margin-top: 7px;
+  margin-left: 2px;
+  color: #666;
+  font-size: 10px;
+}
+
+.footer {
+  margin: auto 0 15px;
+  border-top: solid 2px #666;
+  &__copyright {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+}

@@ -1,13 +1,14 @@
-%p.message
-  毎日15時に自動集計しています。
+.message
+  %p 毎日15時に自動集計しています。
 
--#tweet-button-start
-= link_to 'Tweet', "https://twitter.com/share?ref_src=twsrc%5Etfw",
-class: 'twitter-share-button',
-'data-show-count': "false",
-'data-text': "#BCリーグ\n#ふるさとの全力プロ野球"
-%script{async: '', src: "https://platform.twitter.com/widgets.js", charset: "utf-8"}
--#tweet-button-end
+.share
+  -#tweet-button-start
+  = link_to 'Tweet', "https://twitter.com/share?ref_src=twsrc%5Etfw",
+  class: 'twitter-share-button',
+  'data-show-count': "false",
+  'data-text': "#BCリーグ\n#ふるさとの全力プロ野球"
+  %script{async: '', src: "https://platform.twitter.com/widgets.js", charset: "utf-8"}
+  -#tweet-button-end
 
 %table.count-table
   %thead
