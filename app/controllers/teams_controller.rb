@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
 
-  PER = 3
+  PER = 10
 
   def index
     @followers_today = Follower.where(created_at: Time.now.all_day).order(followers_count: :desc)
