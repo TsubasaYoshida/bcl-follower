@@ -21,4 +21,5 @@
           = follower.created_at.strftime("%F %R")
         %td.count-table__cell--per-day
           = follower.followers_count
--#= paginate @followers
+
+= paginate @followers, window: 2

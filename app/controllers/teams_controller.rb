@@ -1,5 +1,7 @@
 class TeamsController < ApplicationController
 
+  PER = 3
+
   def index
     @followers_today = Follower.where(created_at: Time.now.all_day).order(followers_count: :desc)
     @followers_yesterday = Follower.where(created_at: 1.day.ago.all_day)
@@ -12,8 +14,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    # @followers = @team.followers.page(params[:page]).per(3).order(created_at: :desc)
-    @followers = @team.followers.order(created_at: :desc)
+    @followers = @team.followers.page(params[:page]).per(PER).order(created_at: :desc)
   end
 
 end
