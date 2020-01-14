@@ -76,6 +76,13 @@ $page-size: 25px;
   line-height: $page-size;
   text-align: center;
   border-bottom: solid 3px #1e90ff;
+  a {
+    display: block;
+  }
+  a:hover {
+    color: #FFF;
+    background-color: #666;
+  }
 }
 
 .first, .prev, .next, .last, .gap {
