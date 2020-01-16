@@ -14,6 +14,12 @@
   last updated : #{@team.followers.last.created_at.strftime("%F %R")}
 
 %table.count-table
+  %thead
+    %tr
+      %th.per-day-table__th
+        Date
+      %th.per-day-table__th
+        Followers
   %tbody
     - @followers.each do |follower|
       %tr
