@@ -57,6 +57,10 @@ namespace :twitter do
         team_id: 111,
         followers_count: client.user(1194902882874617856).followers_count,
     )
+    new_models << Follower.new(
+        team_id: 121,
+        followers_count: client.user(158293884).followers_count,
+    )
     Follower.import new_models
   end
 end

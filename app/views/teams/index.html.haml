@@ -31,7 +31,8 @@
             = follower.followers_count
         %td.count-table__cell
           %span.count-table__cell--text
-            = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team)&.followers_count.to_i)
+            - if @followers_yesterday.find_by(team: follower.team)
+              = format_math_sign(follower.followers_count - @followers_yesterday.find_by(team: follower.team).followers_count.to_i)
 
 .last-updated
   last updated : #{@followers_today.first.created_at.strftime("%F %R")}
