@@ -29,3 +29,23 @@
           = follower.followers_count
 
 = paginate @followers, window: 2
+
+.caption--beginning-of-month
+  Beginning of month
+
+%table.count-table
+  %thead
+    %tr
+      %th.per-day-table__th
+        Date
+      %th.per-day-table__th
+        Followers
+  %tbody
+    - year_range = @team.followers.first.created_at.year..@team.followers.last.created_at.year
+    - year_range.to_a.product((1..12).to_a) do |year, month|
+      - if follower_beginning_of_month = @team.followers.find_by(created_at: Time.gm(year, month, 1).all_day)
+        %tr
+          %td.count-table__cell--per-day
+            = follower_beginning_of_month.created_at.strftime("%F %R")
+          %td.count-table__cell--per-day
+            = follower_beginning_of_month.followers_count
