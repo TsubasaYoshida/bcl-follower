@@ -43,9 +43,10 @@ main {
 
 .header {
   border-bottom: solid 2px #666;
-  padding: 0 0 0 15px;
+  text-align: center;
   &__app-title {
     margin: 10px 0 0;
+    height: 100px;
     a:hover {
       opacity: .5;
     }

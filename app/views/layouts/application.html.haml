@@ -2,7 +2,7 @@
 %html
   %head
   %head{prefix: 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#'}
-    %title BCL Follower
+    %title BCL follower
     = csrf_meta_tags
     = csp_meta_tag
     %meta{charset: 'utf-8'}/
@@ -11,10 +11,10 @@
     %meta{'http-equiv': 'content-language', content: 'ja'}/
 
     -#ogp
-    %meta{property: 'og:title', content: 'BCL Follower'}/
+    %meta{property: 'og:title', content: 'BCL follower'}/
     %meta{property: 'og:type', content: 'website'}/
     %meta{property: 'og:url', content: 'https://bcl-follower.herokuapp.com'}/
-    %meta{property: 'og:site_name', content: 'BCL Follower'}/
+    %meta{property: 'og:site_name', content: 'BCL follower'}/
     %meta{property: 'og:description', content: 'BCリーグのフォロワー数を自動集計するサイトです。'}/
     %meta{property: 'og:image', content: "#{image_url 'ogp.png'}"}/
     %meta{name: 'twitter:card', content: 'summary_large_image'}/
@@ -31,9 +31,10 @@
   %body
     %header.header
       %h1.header__app-title
-        = link_to 'BCL Follower', '/'
+        = link_to :root do
+          = image_tag 'header.svg', alt: 'BCL follower', height: '100px'
     %main
       = yield
     %footer.footer
       .footer__copyright
-        &#169; 2019-#{get_this_year} BCL Follower
+        &#169; 2019-#{get_this_year} BCL follower
