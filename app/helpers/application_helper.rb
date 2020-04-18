@@ -1,6 +1,8 @@
 module ApplicationHelper
   def format_math_sign(value)
-    if value > 0
+    if value.nil?
+      '-'
+    elsif value > 0
       "+#{value}"
     elsif value == 0
       "±#{value}"

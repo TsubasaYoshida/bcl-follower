@@ -156,7 +156,17 @@ $page-size: 25px;
   border-right: solid 2px #666;
   border-bottom: solid 2px #666;
   border-left: solid 2px #666;
-  padding: 2px 15px;
+  padding: 2px 8px;
+  width: 96px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.count-table__cell--beginning-of-month {
+  border-right: solid 2px #666;
+  border-bottom: solid 2px #666;
+  border-left: solid 2px #666;
+  padding: 2px 16px;
   text-align: center;
 }
 
@@ -230,7 +240,7 @@ $page-size: 25px;
   }
 }
 
-.caption--beginning-of-month{
+.caption--beginning-of-month {
   margin: 36px 0 4px;
   padding-top: 24px;
   border-top: #CCCCCC solid 1px;

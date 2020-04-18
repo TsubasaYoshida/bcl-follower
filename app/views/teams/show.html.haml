@@ -20,13 +20,17 @@
         Date
       %th.per-day-table__th
         Followers
+      %th.per-day-table__th
+        up / down
   %tbody
     - @followers.each do |follower|
       %tr
         %td.count-table__cell--per-day
-          = follower.created_at.strftime("%F %R")
+          = follower.created_at.strftime("%y-%m-%d")
         %td.count-table__cell--per-day
           = follower.followers_count
+        %td.count-table__cell--per-day
+          = format_math_sign(updown_quantity(follower))
 
 = paginate @followers, window: 2
 
@@ -45,7 +49,7 @@
     - year_range.to_a.product((1..12).to_a) do |year, month|
       - if follower_beginning_of_month = @team.followers.find_by(created_at: Time.gm(year, month, 1).all_day)
         %tr
-          %td.count-table__cell--per-day
-            = follower_beginning_of_month.created_at.strftime("%F %R")
-          %td.count-table__cell--per-day
+          %td.count-table__cell--beginning-of-month
+            = follower_beginning_of_month.created_at.strftime("%F")
+          %td.count-table__cell--beginning-of-month
             = follower_beginning_of_month.followers_count
