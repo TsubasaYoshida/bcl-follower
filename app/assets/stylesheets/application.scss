@@ -240,10 +240,23 @@ $page-size: 25px;
   }
 }
 
-.caption--beginning-of-month {
+.caption {
   margin: 36px 0 4px;
   padding-top: 24px;
   border-top: #CCCCCC solid 1px;
   font-weight: bold;
   font-size: 18px;
+}
+
+.last-ten-days {
+  position: relative;
+  top: -.5em;
+  &__label {
+    font-size: 14px;
+  }
+  &__updown {
+    font-weight: bold;
+    font-size: 26px;
+    color: #B00100;
+  }
 }

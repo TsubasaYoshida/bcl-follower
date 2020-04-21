@@ -34,7 +34,15 @@
 
 = paginate @followers, window: 2
 
-.caption--beginning-of-month
+.caption
+  Stats
+.last-ten-days
+  %span.last-ten-days__label
+    最近10日間 :
+  %span.last-ten-days__updown
+    = format_math_sign(updown_quantity_last_ten_days(@team))
+
+.caption
   Beginning of month
 
 %table.count-table
